@@ -1,8 +1,341 @@
-html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ByteFun - Mobile App Development Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 0 40px;
+            color: white;
+        }
+        
+        .logo {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-20px);}
+            60% {transform: translateY(-10px);}
+        }
+        
+        .company-name {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+        
+        .app-showcase {
+            text-align: center;
+            margin: 50px 0;
+            color: white;
+        }
+        
+        .app-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .app-description {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 50px 0;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .feature-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 60px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            margin: 50px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .cta-button {
+            background: #ff6b6b;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+        }
+        
+        .app-stores {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .store-button {
+            background: #000;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .store-button:hover {
+            background: #333;
+            transform: scale(1.05);
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0 20px;
+            font-size: 1rem;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #ffd93d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: #ffec8b;
+            text-decoration: underline;
+        }
+        
+        .contact-info {
+            margin: 20px 0;
+        }
+        
+        .contact-item {
+            margin: 8px 0;
+            opacity: 0.9;
+        }
+        
+        .highlight {
+            color: #ffd93d;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            .company-name {
+                font-size: 2.5rem;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+            }
+            
+            .app-title {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .app-stores {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
 <body>
-    <h1>Welcome to my App Page</h1>
-    <p>This is the official support site for my apps.</p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">📱</div>
+            <h1 class="company-name">ByteFun</h1>
+            <p class="tagline">Mobile App Development Experts | Digital Innovation Leaders</p>
+        </div>
+        
+        <div class="app-showcase">
+            <h2 class="app-title">Revolutionary Mobile Experience</h2>
+            <p class="app-description">
+                ByteFun delivers cutting-edge mobile applications that transform how users interact with technology. 
+                Our apps combine intuitive design with powerful functionality to create exceptional user experiences.
+            </p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h3 class="feature-title">Rapid Deployment</h3>
+                <p class="feature-desc">Fast development cycles with continuous integration and deployment for quick market entry.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 class="feature-title">Beautiful UI/UX</h3>
+                <p class="feature-desc">Intuitive and engaging user interfaces designed with the latest UX principles.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Security First</h3>
+                <p class="feature-desc">Enterprise-grade security measures to protect user data and privacy.</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h3 class="feature-title">Cross-Platform</h3>
+                <p class="feature-desc">Native performance across iOS and Android with single codebase efficiency.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3 class="feature-title">Analytics</h3>
+                <p class="feature-desc">Comprehensive analytics and insights to optimize user engagement.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3 class="feature-title">High Performance</h3>
+                <p class="feature-desc">Optimized for speed and efficiency, ensuring smooth operation on all devices.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Transform Your Mobile Vision?</h2>
+            <p style="color: white; margin-bottom: 30px; font-size: 1.2rem;">
+                Download our app today and experience the <span class="highlight">ByteFun</span> difference!
+            </p>
+            
+            <div class="app-stores">
+                <a href="#" class="store-button">
+                    <span>📱</span>
+                    <span>App Store</span>
+                </a>
+                <a href="#" class="store-button">
+                    <span>🤖</span>
+                    <span>Google Play</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-links">
+                <a href="https://gist.githubusercontent.com/stevensioun/acabb98ed12316d033127a49f6739384/raw/40f00ed9ae3ec8c25b9fe252f2770ea34be88c8f/privacy-policy.md" class="footer-link" target="_blank">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Support</a>
+                <a href="#" class="footer-link">Contact Us</a>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">📧 Email: bytefun163@gmail.com</div>
+            </div>
+            
+            <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.7;">
+                © 2026 ByteFun Mobile Solutions. All rights reserved.
+            </div>
+        </div>
+    </div>
 </body>
 </html>
